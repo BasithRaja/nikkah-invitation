@@ -5,9 +5,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Nikkah Invitation | Basith & Shifana</title>
+<title>Nikkah Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,29 +21,26 @@
 
 <div id="startScreen">
 
-<h1>💍 Nikkah Invitation</h1>
-<p>Tap to open the invitation</p>
+<h1 class="mainTitle">Nikkah Invitation</h1>
+<p>Tap to Begin</p>
 
-<button onclick="startInvitation()">Open Invitation</button>
+<button onclick="startInvite()">Open Invitation</button>
 
 </div>
 
-<div id="lanternContainer"></div>
+<div id="hearts"></div>
 
 <div id="slides">
 
 <section class="slide">
 
-<h1>Bismillah-ir-Rahman-ir-Raheem</h1>
+<h2 class="bismillah">Bismillah-ir-Rahman-ir-Raheem</h2>
 
-<p>
+<p class="subtitle">
 “In the Name of Allah, the most Beneficent & most Merciful”
 </p>
 
-<p>
-Ya Allah guide this marriage to the best of understanding,
-happiness, prosperity and success – Ameen
-</p>
+<p class="tap">Tap anywhere</p>
 
 </section>
 
@@ -49,25 +48,22 @@ happiness, prosperity and success – Ameen
 
 <h2>With Blessings From</h2>
 
-<p>Mr & Mrs N. Anvar Batcha – Tanjore</p>
-<p>Mr & Mrs S. Mohamed Yusuf Sait – Trichy</p>
+<p>Mr & Mrs N. Anvar Batcha</p>
+<p>Mr & Mrs S. Mohamed Yusuf Sait</p>
 
-<p>
-Request the honour of your presence with family and friends
-on the auspicious occasion of the Nikkah of their beloved children
-</p>
+<p class="tap">Tap to continue</p>
 
 </section>
 
-<section class="slide names">
+<section class="slide couple">
 
-<h2>The Nikkah Of</h2>
+<h1 class="groom glow">A. Basith Raja</h1>
 
-<h1 class="groom">A. Basith Raja</h1>
+<h2 class="and">&</h2>
 
-<h3>&</h3>
+<h1 class="bride glow">M. Shifana</h1>
 
-<h1 class="bride">M. Shifana</h1>
+<p class="tap">Tap to continue</p>
 
 </section>
 
@@ -75,7 +71,9 @@ on the auspicious occasion of the Nikkah of their beloved children
 
 <h2>Nikkah Ceremony</h2>
 
-<p>03 May 2026 – Sunday</p>
+<p>03 May 2026</p>
+
+<p>Sunday</p>
 
 <p>10:30 AM – 11:30 AM</p>
 
@@ -83,29 +81,17 @@ on the auspicious occasion of the Nikkah of their beloved children
 
 <p>Trichy</p>
 
+<p class="tap">Tap to continue</p>
+
 </section>
 
 <section class="slide">
 
-<h2>Countdown to Nikkah</h2>
+<h2>Countdown</h2>
 
 <div id="countdown"></div>
 
-</section>
-
-<section class="slide">
-
-<h2>Dua for the Couple</h2>
-
-<p class="dua">
-
-Barakallahu laka wa baraka alaika wa jama'a bainakuma fi khair
-
-</p>
-
-<p>
-May Allah bless your marriage and unite you in goodness
-</p>
+<p class="tap">Tap to continue</p>
 
 </section>
 
@@ -113,9 +99,11 @@ May Allah bless your marriage and unite you in goodness
 
 <h2>Location</h2>
 
-<img src="qr.png" class="qr">
+<img src="qr.jpeg" class="qr">
 
-<p>Scan QR for Google Maps Location</p>
+<p>Scan for Google Maps</p>
+
+<p class="tap">Tap to continue</p>
 
 </section>
 
@@ -127,8 +115,6 @@ May Allah bless your marriage and unite you in goodness
 
 <p>Family & Friends</p>
 
-<button onclick="shareWhatsApp()">Share Invitation</button>
-
 </section>
 
 </div>
@@ -136,5 +122,4 @@ May Allah bless your marriage and unite you in goodness
 <script src="script.js"></script>
 
 </body>
-
 </html>

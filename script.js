@@ -12,8 +12,6 @@ document.getElementById("music").play()
 
 slides[0].style.display="flex"
 
-createHearts()
-
 startCountdown()
 
 }
@@ -27,26 +25,6 @@ slides[current].style.display="none"
 current++
 
 slides[current].style.display="flex"
-
-}
-
-}
-
-function createHearts(){
-
-for(let i=0;i<15;i++){
-
-let heart=document.createElement("div")
-
-heart.className="heart"
-
-heart.innerHTML="❤"
-
-heart.style.left=Math.random()*100+"%"
-
-heart.style.animationDuration=(6+Math.random()*4)+"s"
-
-document.getElementById("hearts").appendChild(heart)
 
 }
 

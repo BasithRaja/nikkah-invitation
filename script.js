@@ -1,83 +1,75 @@
 let slides=document.querySelectorAll(".slide")
+
 let current=0
 
-function startInvitation(){
+document.addEventListener("click",nextSlide)
+
+function startInvite(){
 
 document.getElementById("startScreen").style.display="none"
 
 document.getElementById("music").play()
 
-showSlide()
+slides[0].style.display="flex"
 
-createLanterns()
+createHearts()
+
+startCountdown()
 
 }
 
-function showSlide(){
+function nextSlide(){
 
-slides.forEach(s=>s.style.display="none")
+if(current<slides.length-1){
 
-slides[current].style.display="flex"
-
-setTimeout(()=>{
+slides[current].style.display="none"
 
 current++
 
-if(current<slides.length){
-
-showSlide()
-
-}
-
-},6000)
-
-}
-
-function createLanterns(){
-
-for(let i=0;i<8;i++){
-
-let lantern=document.createElement("img")
-
-lantern.src="lantern.png"
-
-lantern.className="lantern"
-
-lantern.style.left=Math.random()*100+"%"
-
-lantern.style.animationDuration=8+Math.random()*5+"s"
-
-document.getElementById("lanternContainer").appendChild(lantern)
+slides[current].style.display="flex"
 
 }
 
 }
 
-function shareWhatsApp(){
+function createHearts(){
 
-let url=window.location.href
+for(let i=0;i<15;i++){
 
-let message="You are invited to our Nikkah 💍 "+url
+let heart=document.createElement("div")
 
-window.open("https://wa.me/?text="+encodeURIComponent(message))
+heart.className="heart"
+
+heart.innerHTML="❤"
+
+heart.style.left=Math.random()*100+"%"
+
+heart.style.animationDuration=(6+Math.random()*4)+"s"
+
+document.getElementById("hearts").appendChild(heart)
 
 }
 
-let countdown=document.getElementById("countdown")
+}
 
-let weddingDate=new Date("May 3, 2026 10:30:00").getTime()
+function startCountdown(){
+
+let eventDate=new Date("May 3, 2026 10:30:00").getTime()
 
 setInterval(()=>{
 
 let now=new Date().getTime()
 
-let diff=weddingDate-now
+let diff=eventDate-now
 
-let days=Math.floor(diff/(1000*60*60*24))
-let hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60))
-let mins=Math.floor((diff%(1000*60*60))/(1000*60))
-let sec=Math.floor((diff%(1000*60))/1000)
+let d=Math.floor(diff/(1000*60*60*24))
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60))
+let m=Math.floor((diff%(1000*60*60))/(1000*60))
+let s=Math.floor((diff%(1000*60))/1000)
 
-countdown.innerHTML=days+"d "+hours+"h "+mins+"m "+sec+"s"
+document.getElementById("countdown").innerHTML=
+d+"d "+h+"h "+m+"m "+s+"s"
 
 },1000)
+
+}

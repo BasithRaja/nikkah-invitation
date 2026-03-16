@@ -1,149 +1,160 @@
 body{
 
 margin:0;
-font-family:Georgia,serif;
-
-background:linear-gradient(45deg,#7a0000,#300000);
-
+font-family:'Poppins',sans-serif;
+background:#072421;
 color:white;
 text-align:center;
-
 overflow:hidden;
 
 }
 
-#startScreen{
+/* Islamic arch background */
 
-position:fixed;
-width:100%;
-height:100%;
+.slide{
 
-background:#8b0000;
+display:none;
+height:100vh;
+width:100vw;
 
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 
-z-index:10;
+padding:30px;
+
+background-image:url("arch.png");
+background-size:cover;
+background-position:center;
+
+animation:flip 1s;
 
 }
 
-button{
+/* golden border */
 
-padding:15px 35px;
+.slide::before{
 
-font-size:18px;
+content:"";
+position:absolute;
 
-border-radius:30px;
+width:90%;
+height:90%;
 
-border:none;
+border:3px solid gold;
 
-background:gold;
+border-radius:20px;
 
-cursor:pointer;
-
-margin-top:20px;
-
-}
-
-.slide{
-
-width:100vw;
-height:100vh;
-
-display:none;
-
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-padding:40px;
-
-animation:fade 2s;
+animation:goldGlow 4s infinite alternate;
 
 }
 
-.groom{
+@keyframes goldGlow{
 
-font-size:48px;
+from{box-shadow:0 0 10px gold}
+to{box-shadow:0 0 40px gold}
+
+}
+
+.mainTitle{
+
+font-family:'Great Vibes',cursive;
+font-size:50px;
+
+}
+
+.groom,.bride{
+
+font-family:'Great Vibes',cursive;
+font-size:55px;
+
+}
+
+.glow{
+
 color:#ffd700;
-
-}
-
-.bride{
-
-font-size:48px;
-color:#ffb6c1;
+text-shadow:0 0 10px gold,0 0 30px gold;
 
 }
 
 .qr{
 
 width:200px;
-margin-top:20px;
+border-radius:10px;
 
 }
 
-.dua{
+.tap{
 
-font-size:24px;
-font-style:italic;
+margin-top:40px;
+opacity:.6;
+font-size:14px;
 
 }
 
 #countdown{
 
-font-size:40px;
-color:gold;
+font-size:32px;
+color:#ffd700;
 
 }
 
-@keyframes fade{
+/* flip animation */
 
-from{
+@keyframes flip{
 
-opacity:0;
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
+from{transform:rotateY(90deg);opacity:0}
+to{transform:rotateY(0);opacity:1}
 
 }
 
-}
+/* hearts */
 
-/* Lantern animation */
-
-#lanternContainer{
+#hearts{
 
 position:fixed;
-bottom:-200px;
-
+bottom:-50px;
 width:100%;
-
-pointer-events:none;
 
 }
 
-.lantern{
+.heart{
 
 position:absolute;
-
-width:70px;
-
-animation:float 12s linear infinite;
+color:#ff5c8a;
+font-size:22px;
+animation:float 8s linear infinite;
 
 }
 
 @keyframes float{
 
 0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
 
-100%{transform:translateY(-120vh)}
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.groom,.bride{
+
+font-size:40px;
+
+}
+
+.mainTitle{
+
+font-size:36px;
+
+}
+
+.qr{
+
+width:160px;
+
+}
 
 }

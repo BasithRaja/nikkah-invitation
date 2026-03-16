@@ -1,159 +1,186 @@
 body{
 
 margin:0;
-font-family:'Poppins',sans-serif;
-background:#072421;
-color:white;
-text-align:center;
+
+font-family:'Montserrat',sans-serif;
+
+background:#0f3b36;
+
+color:#e6c98c;
+
 overflow:hidden;
 
 }
 
-/* Islamic arch background */
+/* start screen */
 
-.slide{
+#startScreen{
 
-display:none;
+position:fixed;
+
 height:100vh;
-width:100vw;
+width:100%;
 
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 
-padding:30px;
+background:#0f3b36;
 
-background-image:url("arch.png");
-background-size:cover;
-background-position:center;
+z-index:10;
+
+}
+
+.title{
+
+font-family:'Playfair Display',serif;
+
+font-size:40px;
+
+letter-spacing:2px;
+
+}
+
+button{
+
+padding:14px 30px;
+
+border:none;
+
+border-radius:30px;
+
+background:#e6c98c;
+
+color:#0f3b36;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+/* slides */
+
+.slide{
+
+display:none;
+
+height:100vh;
+width:100vw;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+}
+
+/* invitation card */
+
+.card{
+
+width:90%;
+max-width:450px;
+
+padding:40px;
+
+text-align:center;
+
+background:linear-gradient(145deg,#0f3b36,#0a2a27);
+
+border:2px solid #e6c98c;
+
+border-radius:20px;
+
+box-shadow:0 0 40px rgba(230,201,140,0.2);
 
 animation:flip 1s;
 
 }
 
-/* golden border */
+/* couple names */
 
-.slide::before{
+.couple{
 
-content:"";
-position:absolute;
+font-family:'Playfair Display',serif;
 
-width:90%;
-height:90%;
+font-size:34px;
 
-border:3px solid gold;
+letter-spacing:2px;
 
-border-radius:20px;
-
-animation:goldGlow 4s infinite alternate;
+text-shadow:0 0 10px gold;
 
 }
 
-@keyframes goldGlow{
+/* & symbol */
 
-from{box-shadow:0 0 10px gold}
-to{box-shadow:0 0 40px gold}
+.and{
 
-}
-
-.mainTitle{
-
-font-family:'Great Vibes',cursive;
-font-size:50px;
-
-}
-
-.groom,.bride{
-
-font-family:'Great Vibes',cursive;
-font-size:55px;
-
-}
-
-.glow{
-
-color:#ffd700;
-text-shadow:0 0 10px gold,0 0 30px gold;
-
-}
-
-.qr{
-
-width:200px;
-border-radius:10px;
-
-}
-
-.tap{
-
-margin-top:40px;
-opacity:.6;
-font-size:14px;
-
-}
-
-#countdown{
-
-font-size:32px;
-color:#ffd700;
-
-}
-
-/* flip animation */
-
-@keyframes flip{
-
-from{transform:rotateY(90deg);opacity:0}
-to{transform:rotateY(0);opacity:1}
-
-}
-
-/* hearts */
-
-#hearts{
-
-position:fixed;
-bottom:-50px;
-width:100%;
-
-}
-
-.heart{
-
-position:absolute;
-color:#ff5c8a;
 font-size:22px;
-animation:float 8s linear infinite;
+
+display:block;
+
+margin:10px;
 
 }
 
-@keyframes float{
-
-0%{transform:translateY(0)}
-100%{transform:translateY(-110vh)}
-
-}
-
-/* responsive */
-
-@media(max-width:768px){
-
-.groom,.bride{
-
-font-size:40px;
-
-}
-
-.mainTitle{
-
-font-size:36px;
-
-}
+/* qr */
 
 .qr{
 
 width:160px;
+
+margin-top:20px;
+
+border-radius:10px;
+
+}
+
+/* countdown */
+
+#countdown{
+
+font-size:28px;
+
+margin-top:10px;
+
+}
+
+/* animation */
+
+@keyframes flip{
+
+from{
+
+transform:rotateY(90deg);
+opacity:0;
+
+}
+
+to{
+
+transform:rotateY(0);
+opacity:1;
+
+}
+
+}
+
+/* mobile responsiveness */
+
+@media(max-width:768px){
+
+.card{
+
+padding:30px;
+
+}
+
+.couple{
+
+font-size:28px;
 
 }
 
